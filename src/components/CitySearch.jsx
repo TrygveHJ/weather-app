@@ -1,8 +1,10 @@
 import React from 'react'
-const API_url = import.meta.env.VITE_WEATHER_URL
+import WeatherDisplay from './WeatherDisplay'
+const API_url = import.meta.env.VITE_GEOCODING_URL
 const API_key = import.meta.env.VITE_API_KEY
 
-export default function CitySearch() {
+export default function CitySearch({ setCity }) {
+
     async function handleSubmit(event) {
         event.preventDefault()
         const form = event.target
@@ -10,23 +12,35 @@ export default function CitySearch() {
         const city = formData.get("city")
 
         const url = new URL(API_url)
-        console.log(url);
+        // console.log(url);
 
 
         url.searchParams.set("q", city)
         url.searchParams.set("appid", API_key)
-        console.log(url);
+        // console.log(url);
 
         const response = await fetch(url)
-        console.log(response);
+        const data = await response.json()
+        // console.log(response);
+        console.log(data);
+
+        const lat = data[0].lat
+        const lon = data[0].lon
+        const cityName = data[0].name
+
+        setCity(data[0])
+
+
 
 
     }
 
     return (
-        <form onSubmit={handleSubmit}>
-            <input type="text" name="city" id="Write a city name" />
-            <button type="submit">Search</button>
-        </form>
+        <>
+            <form onSubmit={handleSubmit}>
+                <input type="text" name="city" id="Write a city name" />
+                <button type="submit">Search</button>
+            </form>
+        </>
     )
 }
