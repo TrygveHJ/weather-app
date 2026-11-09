@@ -1,5 +1,6 @@
 import React from 'react'
 import WeatherDisplay from './WeatherDisplay'
+
 const API_url = import.meta.env.VITE_GEOCODING_URL
 const API_key = import.meta.env.VITE_API_KEY
 
@@ -24,9 +25,9 @@ export default function CitySearch({ setCity }) {
         // console.log(response);
         console.log(data);
 
-        const lat = data[0].lat
-        const lon = data[0].lon
-        const cityName = data[0].name
+        // const lat = data[0].lat
+        // const lon = data[0].lon
+        // const cityName = data[0].name
 
         setCity(data[0])
 
@@ -37,9 +38,9 @@ export default function CitySearch({ setCity }) {
 
     return (
         <>
-            <form onSubmit={handleSubmit}>
-                <input type="text" name="city" id="Write a city name" />
-                <button type="submit">Search</button>
+            <form onSubmit={handleSubmit} className='form'>
+                <input type="text" name="city" id="Write a city name" className='form__input' />
+                <button type="submit" className='form__button'>Search</button>
             </form>
         </>
     )
