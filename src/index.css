@@ -31,8 +31,9 @@ a {
 /* #endregion reset */
 
 /* #region root */
-#root {
-    background-color: skyblue;
+:root {
+    --background: #F3F7FE;
+    --color1: #2E5FC9;
 }
 
 /* #endregion root */

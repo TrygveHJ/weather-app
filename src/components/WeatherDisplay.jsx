@@ -41,7 +41,10 @@ export default function WeatherDisplay({ cityData }) {
                 <p className='details__city'>Weather in {cityData?.name}</p>
                 {weatherData && (
                     <>
-                        <p className='details__temp'>Temp is: {weatherData?.main.temp} &deg;C</p>
+                        <div className="details-wrapper">
+                            <p className='details__temp'>Temp is: <span className='temp__span'>{weatherData?.main.temp} &deg;C</span></p>
+                            <p className='details__temp'>Temp feels like: <span className='temp__span'>{weatherData?.main.feels_like} &deg;C</span></p>
+                        </div>  
                         <p className='details__weather'>Weather is: {weatherData.weather[0].description}</p>
                     </>
                 )}

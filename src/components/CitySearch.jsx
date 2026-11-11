@@ -39,7 +39,7 @@ export default function CitySearch({ setCity }) {
     return (
         <>
             <form onSubmit={handleSubmit} className='form'>
-                <input type="text" name="city" id="Write a city name" className='form__input' />
+                <input type="text" name="city" id="city" placeholder='Write a city name' className='form__input' />
                 <button type="submit" className='form__button'>Search</button>
             </form>
         </>

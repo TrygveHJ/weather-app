@@ -1,12 +1,78 @@
+@import url('./index.css');
+
+#root {
+    background-color: var(--background);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* #region header */
+.header {
+    display: flex;
+    justify-content: center;
+}
+
+/* #endregion header */
+
+
+/* #region main */
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* max-width: 80vw; */
+    width: 100%;
+    padding-inline: 10rem;
+
+}
+
+/* #endregion main */
+
 /* #region form */
 .form {
-    background-color: white;
-    border: 1px black solid;
+
+    border: 1px gray solid;
+    border-radius: 5px;
+    margin-block: 2rem;
+
+
+}
+
+.form__input {
+    border: none;
+    border-radius: 5px;
+    padding-block: 0.5rem;
+}
+
+.form__button {
+    background-color: var(--color1);
+    border-radius: 5px;
+    border: 2px var(--color1) solid;
+    padding-block: 0.5rem;
+    color: white;
 }
 
 /* #endregion form */
 
 /* #region details */
-.details {}
+.details {
+    background-color: var(--color1);
+    padding-inline: 5rem;
+    padding-block: 5rem;
+    color: white;
+    border-radius: 15px;
+}
+
+.details__city {
+    font-size: large;
+    font-weight: bold;
+    margin-block-end: 1rem;
+}
+
+.temp__span {
+    font-size: large;
+    font-weight: bold;
+}
 
 /* #endregion details */

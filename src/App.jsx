@@ -10,9 +10,14 @@ function App() {
   return (
 
     <>
-      <CitySearch setCity={setCity} />
-      <WeatherDisplay cityData={cityData} />
-
+      <header className='header'>
+        <h1>Weather</h1>
+      </header>
+      <main className="main">
+        <h2></h2>
+        <CitySearch setCity={setCity} />
+        <WeatherDisplay cityData={cityData} />
+      </main>
     </>
   )
 }
